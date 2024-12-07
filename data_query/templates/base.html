@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Dataquery{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1b1b32;
+            color: #f3f3f3;
+            margin: 0;
+            line-height: 1.6;
+            overflow-y: scroll; /* Ensure scrollbar always shows */
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 12px; /* Width of vertical scrollbar */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #121225; /* Scrollbar thumb color */
+            border-radius: 6px; /* Rounded edges for the thumb */
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #d78b00; /* Darker color on hover */
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: #33334d; /* Scrollbar track color */
+        }
+
+        /* Navbar styling */
+        .navbar {
+            width: 100%;
+            max-width: 1300px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #121225;
+            padding: 10px 20px;
+            height: 60px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        .navbar-center {
+            margin-left: auto; /* Push the links to the right */
+            display: flex;
+            align-items: center; /* Vertically align links */
+            margin-right: 20px;
+        }
+        .navbar a {
+            color: #f3f3f3;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .navbar a:hover {
+            color: #f1a500;
+        }
+
+        .menu-btn {
+            background-color: transparent;
+            border: none;
+            color: #f3f3f3;
+            font-size: 1.5em; /* Adjust icon size */
+            cursor: pointer;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .menu-btn:hover {
+            color: #f1a500;
+        }
+
+        /* Dropdown Menu styling */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 20px;
+            background-color: #1b1b32;
+            width: 200px;
+            border-radius: 5px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .dropdown-menu.active {
+            display: block;
+        }
+
+        .dropdown-menu a {
+            color: #f3f3f3;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-decoration: none;
+            border-bottom: 1px solid #33334d;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: none;
+        }
+
+        /* Center content on the page */
+        .content {
+            display: flex;
+            justify-content: flex-start; /* Aligns content to the left horizontally */
+            align-items: flex-start; /* Aligns content to the top vertically */
+            min-height: 100vh; /* Ensures the content spans the full height of the viewport */
+            text-align: left; /* Aligns text to the left within the block */
+            padding: 80px 20px; /* Adds padding for spacing, ensuring it doesn't overlap the navbar */
+            flex-direction: column; /* Ensures content stacks vertically */
+            padding-top: 150px;
+            padding-inline: 100px;
+        }
+    </style>
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.dropdown-menu');
+            menu.classList.toggle('active');
+        }
+
+        document.addEventListener('click', function(event) {
+            const menu = document.querySelector('.dropdown-menu');
+            const menuButton = document.querySelector('.menu-btn');
+            
+            if (!menu.contains(event.target) && !menuButton.contains(event.target)) {
+                menu.classList.remove('active');
+            }
+        });
+    </script>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="navbar-left">
+            <a href="{% url 'home' %}" class="navbar-brand"><h1>Dataquery</h1></a>
+        </div>
+
+        <div class="navbar-right">
+            <button class="menu-btn" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div class="dropdown-menu">
+            <a href="{% url 'courses' %}">Courses</a>
+            <a href="{% url 'books' %}">Books</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        {% block content %}
+        <h1>Your one-stop for all the resources you need to excel in your data field.</h1>
+        {% endblock %}
+    </div>
+</body>
+</html>

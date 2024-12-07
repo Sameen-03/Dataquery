@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block title %}courses - Dataquery{% endblock %}
+
+{% block content %}
+{% load static %}
+
+<!-- Style Block for Links -->
+<style>
+    .hero a {
+        display: block;
+        margin-bottom: 10px;
+        text-decoration: none; /* Removes underline */
+        color: #f1a500; /* Sets text color */
+        transition: color 0.3s ease; /* Smooth transition on hover */
+    }
+
+    .hero a:hover {
+        color: #ffffff; /* Change color on hover */
+    }
+</style>
+<head> 
+    <h1 style = "margin-bottom:20px;"> Courses </h1>
+<div class="hero">
+    <h1 style="text-align: left; font-size: 1.5rem; margin-bottom:5px;">Python</h1>
+    <hr style="margin-bottom:5px;">
+    <a href="https://cs50.harvard.edu/python/2022/">
+        Harvard CS50's Introduction to Programming with Python
+    </a>
+    <a href="https://www.youtube.com/playlist?list=PL-osiE80TeTt2d9bfVyTiXJA-UTHn6WwU">
+        Corey Schafer Python Tutorials
+    </a>
+    <a href="https://youtube.com/playlist?list=PLu0W_9lII9agwh1XjRt242xIpHhPT2llg&si=nAJwYogPgMAg29-B">
+        Code with Harry's Ultimate Python Course Playlist
+    </a>
+</div>
+
+<div class="hero">
+    <h1 style="text-align: left; font-size: 1.5rem;margin-top: 10px; margin-bottom:5px;">SQL</h1>
+    <hr style="margin-bottom:5px;">
+    <a href="https://cs50.harvard.edu/sql/2024/">
+        Harvard CS50's Introduction to Databases with SQL
+    </a>
+    <a href="https://www.youtube.com/watch?v=5OdVJbNCSso">
+        Bro code's SQL tutorial
+    </a>
+</div>
+
+<div class="hero">
+    <h1 style="text-align: left; font-size: 1.5rem;margin-top: 10px; margin-bottom:5px;">Excel</h1>
+    <hr style="margin-bottom:5px;">
+    <a href="https://youtu.be/wbJcJCkBcMg?si=wc6DTuCZV4x0iWGy">
+        Excel for beginners
+    </a>
+    <a href="https://www.youtube.com/watch?v=TpOIGij43AA">
+        ultimate Excel tutorial
+    </a>
+</div>
+
+<div class="hero">
+    <h1 style="text-align: left; font-size: 1.5rem;margin-top: 10px; margin-bottom:5px;">R language</h1>
+    <hr style="margin-bottom:5px;">
+    <a href="https://www.youtube.com/watch?v=_V8eKsto3Ug">
+        freeCodeCamp's R programming tutorial    
+    </a>
+    <a href="https://www.youtube.com/watch?v=HPJn1CMvtmI">
+        ggplot for plots and graphs in R programming
+    </a>
+
+
+</div>
+
+<div class="hero">
+    <h1 style="text-align: left; font-size: 1.5rem;margin-top: 10px; margin-bottom:5px;">PowerBI</h1>
+    <hr style="margin-bottom:5px;">
+    <a href="https://www.youtube.com/watch?v=Dk25lwdTKow">
+        PowerBI beginner to pro course 
+    </a>
+    <a href="https://youtube.com/playlist?list=PLUaB-1hjhk8HqnmK0gQhfmIdCbxwoAoys&si=4ZtkuRQARelKC4m-">
+        Alex the analyst's PowerBI tutorials
+    </a>
+
+
+</div>
+
+
+
+
+
+</head>
+{% endblock %}

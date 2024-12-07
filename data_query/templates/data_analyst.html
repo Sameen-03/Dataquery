@@ -1,0 +1,257 @@
+{% extends 'base.html' %}
+
+{% block title %}Data_analyst - Dataquery{% endblock %}
+
+{% block content %}
+{% load static %}
+
+<div class="hero">
+    <h1 style="text-align: left; font-size: 2.5rem;">Data Analyst Roadmap and Resources</h1>
+    <hr>
+    <p style="text-align: left; margin-top: 20px; margin-bottom: 70px;">
+        Data analysis is the process of inspecting, cleansing, transforming, and modeling data with the goal of discovering 
+        useful information, informing conclusions, and supporting decision-making. Data analysis has multiple facets and 
+        approaches, encompassing diverse techniques under a variety of names, and is used in different business, science, and 
+        social science domains. In today's business world, data analysis plays a role in making decisions more scientific and 
+        helping businesses operate more effectively.
+    </p>
+
+    <!-- Math Dropdown Menu -->
+    <div class="dropdown">
+        <button class="dropdown-button" data-target=".math-dropdown">Math</button>
+        <div class="dropdown-content math-dropdown">
+            <!-- Algebra Section -->
+            <div class="dropdown-section">
+                <a href="#" class="section-title";>Algebra</a>
+                <div class="dropdown-text">
+                    <h3>Courses</h3>
+                    <a href="https://www.3blue1brown.com/topics/linear-algebra" target="_blank">
+                        3blue1brown's Linear Algebra Playlist
+                    </a>
+                </div>
+            </div>
+
+            <!-- Statistics Section -->
+            <div class="dropdown-section">
+                <a href="#" class="section-title">Statistics</a>
+                <div class="dropdown-text">
+                    <h3>Courses</h3>
+                    <a href="https://www.khanacademy.org/math/statistics-probability" target="_blank">
+                        Khan Academy's Statistics & Probability Course
+                    </a>
+                </div>
+            </div>
+            <!-- Calculus Section -->
+            <div class="dropdown-section">
+                <a href="#" class="section-title">Calculus</a>
+                <div class="dropdown-text">
+                    <h3>Courses</h3>
+                    <a href="https://www.3blue1brown.com/topics/calculus" target="_blank">
+                        3blue1brown's Calculus Playlist
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Python Dropdown Menu -->
+    <div class="dropdown">
+        <button class="dropdown-button" data-target=".python-dropdown">Python</button>
+        <div class="dropdown-content python-dropdown">
+            <!-- Courses Section -->
+            <h3 style: "margin-left: 10px">Courses</h3>
+                <a href="https://cs50.harvard.edu/python/2022/" target="_blank">
+                    Harvard CS50's Programming with Python
+                </a>
+                <a href="https://www.youtube.com/playlist?list=PLu0W_9lII9agwh1XjRt242xIpHhPT2llg" target="_blank">
+                    Code with Harry's "The ultimate Python course" playlist
+                </a>
+                <a href="https://www.codedex.io/python" target="_blank">
+                    Codedex.io Python course
+                </a>
+        </div>
+    </div>
+    <!-- SQL Dropdown Menu -->
+    <div class="dropdown">
+        <button class="dropdown-button" data-target=".SQL-dropdown">SQL</button>
+        <div class="dropdown-content SQL-dropdown">
+            <!-- Courses Section -->
+            <h3 style: "margin-left: 10px">Courses</h3>
+                <a href="https://cs50.harvard.edu/sql/2024/" target="_blank">
+                    Harvard CS50's Databases with SQL
+                </a>
+                <a href="https://youtube.com/playlist?list=PLDp4ZIFbgTTO8dxL7dNaBxZJY6JzyHHpA&si=Jr_7OhZRs0Ak93a8" target="_blank">
+                    Alex the Analyst's SQL playlist
+                </a>
+            <!-- practice section -->
+            <h3 style: "margin-left: 10px">Practice</h3>
+                <a href="https://www.hackerrank.com/domains/sql" target="_blank">
+                    Hackerrank SQL problems
+                </a>
+                <a href="https://www.sql-practice.com/" target="_blank">
+                    sql-practice easy to hard questions
+                </a>
+
+        </div>
+    </div>
+
+    <!-- Excel Dropdown Menu -->
+    <div class="dropdown">
+        <button class="dropdown-button" data-target=".Excel-dropdown">Excel</button>
+        <div class="dropdown-content Excel-dropdown">
+            <!-- Courses Section -->
+            <h3 style: "margin-left: 10px">Courses</h3>
+                <a href="https://youtube.com/playlist?list=PLUaB-1hjhk8Hyd5NiPQ9CND82vNodlFF5&si=BEIpZA_C5Rk6xmhT" target="_blank">
+                    Alex the Analyst's Excel playlist
+                </a>
+
+        </div>
+    </div>
+
+    <!-- PowerBI Dropdown Menu -->
+    <div class="dropdown">
+        <button class="dropdown-button" data-target=".PowerBI-dropdown">PowerBI</button>
+        <div class="dropdown-content PowerBI-dropdown">
+            <!-- Courses Section -->
+            <h3 style: "margin-left: 10px">Courses</h3>
+                <a href="https://youtube.com/playlist?list=PLUaB-1hjhk8HqnmK0gQhfmIdCbxwoAoys&si=4ZtkuRQARelKC4m-" target="_blank">
+                    Alex the Analyst's PowerBI playlist
+                </a>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    // Toggle Dropdown Functionality
+    document.addEventListener('click', function (event) {
+        const target = event.target;
+
+        // Toggle dropdown menu visibility
+        if (target.matches('.dropdown-button')) {
+            const dropdownContent = document.querySelector(target.getAttribute('data-target'));
+            dropdownContent.classList.toggle('expanded');
+        }
+
+        // Show/hide corresponding dropdown text
+        if (target.matches('.section-title')) {
+            event.preventDefault();
+            const dropdownText = target.nextElementSibling;
+            const isVisible = dropdownText.style.display === 'block';
+            document.querySelectorAll('.dropdown-text').forEach((text) => {
+                text.style.display = 'none';
+            });
+            dropdownText.style.display = isVisible ? 'none' : 'block';
+        }
+
+        // Collapse dropdowns when clicking outside
+        document.querySelectorAll('.dropdown-content').forEach((dropdown) => {
+            if (!dropdown.contains(event.target) && !dropdown.previousElementSibling.contains(event.target)) {
+                dropdown.classList.remove('expanded');
+            }
+        });
+    });
+</script>
+
+<style>
+    /* Hero Container */
+    .hero {
+        padding: 20px;
+        background-color: #1B1B32;
+        color: #FFFFFF;
+    }
+
+    /* Dropdown Buttons */
+    .dropdown-button {
+        background-color: #1B1B32;
+        color: #FFFFFF;
+        border: 1px solid #FFFFFF;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 18px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        text-align: left;
+        display: block;
+        width: 100%;
+    }
+
+    .dropdown-button:hover {
+        background-color: #333366;
+    }
+
+    /* Dropdown Content */
+    .dropdown-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease-in-out, opacity 0.3s ease-in-out; /* Smooth transitions */
+        background-color: #1B1B32;
+        border: 1px solid #FFFFFF;
+        margin-top: 5px;
+        opacity: 0; /* Initially hidden */
+    }
+
+    /* Expanded dropdown */
+    .dropdown-content.expanded {
+        max-height: 1000px; /* Large enough to show all content */
+        opacity: 1; /* Make visible when expanded */
+    }
+
+    .dropdown-section {
+        margin-bottom: 1px;
+    }
+
+    .dropdown-section .section-title {
+        color: #FFFFFF;
+        text-decoration: none;
+        padding: 10px;
+        display: block;
+        transition: background-color 0.3s ease;
+    }
+
+    .dropdown-section .section-title:hover {
+        background-color: #333366;
+    }
+
+    .dropdown-text {
+        display: none;
+        padding: 10px 10px 10px 20px;
+        background-color: #333366;
+        color: #FFFFFF;
+        border-top: 1px solid #FFFFFF;
+        transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth transitions */
+    }
+
+    /* Show nested dropdowns */
+    .dropdown-text.expanded {
+        display: block;
+        max-height: 500px; /* Adjust based on content */
+        opacity: 1;
+        padding-left: 20px;
+    }
+
+    .dropdown-content a {
+        color: #00BCD4; /* Change to your desired color */
+        text-decoration: none; /* Removes underline */
+        padding: 10px;
+        display: block;
+        transition: color 0.3s ease; /* Adds smooth color transition */
+    }
+    
+    /* Hover effect for links */
+    .dropdown-content a:hover {
+        color: #FF9800; /* Highlight color on hover */
+    }
+    .math-dropdown .dropdown-text {
+        padding-left: 30px; /* Example for Math dropdown */
+    }
+    
+    .python-dropdown .dropdown-text {
+        padding-left: 20px; /* Example for Python dropdown */
+    }
+
+    .dropdown {
+        margin-bottom: 10px; /* Adjust this value for desired spacing */
+    }
+</style>
+{% endblock %}

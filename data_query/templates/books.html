@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}books - Dataquery{% endblock %}
+
+{% block content %}
+{% load static %}
+
+<style>
+    .hero a {
+        display: block;
+        margin-bottom: 10px;
+        text-decoration: none; /* Removes underline */
+        color: #f1a500; /* Sets text color */
+        transition: color 0.3s ease; /* Smooth transition on hover */
+    }
+
+    .hero a:hover {
+        color: #ffffff; /* Change color on hover */
+    }
+</style>
+
+<head>
+<div class="hero">
+    <h1 style="text-align: left; font-size: 2.5rem;">Books</h1>
+    <hr style= "margin-bottom:10px;">
+    <a href="https://storage.googleapis.com/kaggle-forum-message-attachments/899857/16088/Data_Science_From_Scratch.pdf">
+        Data science from scratch 
+    </a>
+    <a href="https://wesmckinney.com/book/">
+        Python for Data analysis
+    </a>
+
+</head>
+    {% endblock %}

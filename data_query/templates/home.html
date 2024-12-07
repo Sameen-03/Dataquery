@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Dataquery{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <h1 style="text-align: left; font-size: 2.5rem;">Welcome to Dataquery!</h1>
+    <p style="text-align: left; font-size: 1.5rem;margin-bottom: 20px;">Your one-stop for all the resources you need to excel in your data field.</p>
+    <p style="text-align: left; margin-bottom: 50px;font-size: 1.25rem;">An ultimate guide to building a career in data! Whether you're just starting or looking to advance, our platform offers a comprehensive collection of resources, including books, online courses, and tutorials, tailored to various data roles. Explore materials for data analysts, data scientists, machine learning engineers, and more, all curated to help you master the skills needed to excel in your data journey.</p>
+</div>
+
+<!-- New Section -->
+<div class="Roadmaps" style=" text-align: left;">
+    <h2 style="font-size: 2rem; margin-bottom: 10px;">Roadmaps!</h2>
+    <p> Explore our curated roadmaps to guide your data career. Whether starting out or advancing, these step-by-step paths help you master the skills for roles like Data Analyst, Data Scientist, and Machine Learning Engineer, with recommended courses, books, and resources.</p>
+    <div style="
+        display: flex; 
+        gap: 20px; /* Space between buttons */
+        margin-bottom: 50px;
+        margin-top: 20px;
+    ">
+        <a href="{% url 'data_analyst' %}" class="btn" style="
+            padding: 10px 20px; 
+            font-size: 1.25rem; 
+            color: #fff; 
+            background-color: #00000000; 
+            text-decoration: none; 
+            border-radius: 5px; 
+            border: 2px solid #FFFFFF;
+            width: 200px;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        ">Data analyst Roadmap</a>
+
+        <a class="btn" style="
+            padding: 10px 20px; 
+            font-size: 1.25rem; 
+            color: #fff; 
+            background-color: #00000000; 
+            text-decoration: none; 
+            border-radius: 5px; 
+            border: 2px solid #FFFFFF;
+            width: 200px;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        ">More on the way...</a>
+    </div>
+</div>
+
+<div class="Resources" style=" text-align: left;">
+    <h2 style="font-size: 2rem; margin-bottom: 10px;">Skill/tool based resources</h2>
+    <p> Access a variety of resources to master key data tools and skills. From Python and SQL to machine learning frameworks, find courses, tutorials, and books tailored to each technology.</p>
+    <div style="
+        display: flex; 
+        gap: 20px; /* Space between buttons */
+        margin-bottom: 50px;
+        margin-top: 20px;
+    ">
+        <a href="{% url 'courses' %}" class="btn" style="
+            padding: 10px 20px; 
+            font-size: 1.25rem; 
+            color: #fff; 
+            background-color: #00000000; 
+            text-decoration: none; 
+            border-radius: 5px; 
+            border: 2px solid #FFFFFF;
+            width: 200px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        ">Courses</a>
+
+        <a href="{% url 'books' %}" class="btn" style="
+            padding: 10px 20px; 
+            font-size: 1.25rem; 
+            color: #fff; 
+            background-color: #00000000; 
+            text-decoration: none; 
+            border-radius: 5px; 
+            border: 2px solid #FFFFFF;
+            width: 200px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        ">Books</a>
+    </div>
+</div>
+
+    
+    
+{% endblock %}
